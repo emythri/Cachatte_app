@@ -1,0 +1,12 @@
+{% extends 'base.html' %} 
+{% block content %} 
+&nbsp; 
+<table class="table"> 
+{% for i in Subject %} 
+<tr> 
+<td>{{i.name}}</td> 
+</tr> 
+{% endfor %} 
+</table> 
+<a href="{% url 'home' %}"><button type="button" class="btn btn-success">Home Window</button></a> 
+{% endblock %}

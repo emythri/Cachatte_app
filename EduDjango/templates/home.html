@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
  {% block content %}
  <div class="box">
- <h1> Hello {{name}} </h1>
+ <h3> The website mainly focuses on giving idea about existing career options </h3>
+ <form action="stream" method="post"> 
+    {% csrf_token %} 
+        Enter First Name: <input type="text" name="n1"><br> 
+        Enter Second Name: <input type="text" name="n2"><br> 
+    <input type="submit"> 
+</form> 
  </div>
  {% endblock %}
  

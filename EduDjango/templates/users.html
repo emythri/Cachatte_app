@@ -1,0 +1,16 @@
+{% extends 'base.html' %} 
+{% block content %} 
+<div class="box">
+<h1>User Name: {{user}}</h1>
+<h1>....</h1> 
+&nbsp; 
+<table class="table"> 
+{% for i in streams %} 
+<tr> 
+<td>{{i.subject}}</td> 
+</tr> 
+{% endfor %} 
+</table> 
+<a href="{% url 'home' %}"><button type="button" class="btn btn-success">Home Window</button></a> 
+</div>
+{% endblock %}
