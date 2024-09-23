@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+ {% block content %}
+ <div class="box">
+<h1>User Profile</h1>
+&nbsp;
+<table class="table">
+ <tr>
+ <th>Name</th>
+ <th>Age</th>
+ {% comment %} </tr>
+ {% for User in Users%}
+ <tr> {% endcomment %}
+ <td>{{user.name}}</td>
+ <td>{{user.age}}</td>
+ </tr>
+ {% endfor %}
+</table>
+ <a href="{% url 'home' %}"><button type="button" class="btn btn-success">Home Window</button></a>
+</div>
+{% endblock %}

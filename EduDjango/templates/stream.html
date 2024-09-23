@@ -1,6 +1,43 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="box">
+    <h1>Streams</h1>
+    <h3> Hello {{first}}{{last}}</h3>
+    &nbsp;
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Subject</th>
+        </tr>
+        {% for stream in streams %}
+        <tr>
+            <td>{{ stream.name }}</td>
+            <td>{{ stream.category }}</td>
+            {% comment %} <td>
+                {% for subject in stream.subjects.all %}
+                    {{ subject.name }}<br>
+                {% endfor %}
+            </td> {% endcomment %}
+            <td>
+                <a href="{% url 'subjects' stream.id %}">
+                    <button type="button" class="btn btn-success">Subjects</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'home' %}">
+        <button type="button" class="btn btn-success">Home Window</button>
+    </a>
+</div>
+{% endblock %}
+
+
+
+{% comment %} {% extends 'base.html' %}
+{% block content %}
+<div class="box">
 <h1>Streams</h1>
 <h3> Hello {{first}}{{last}}</h3>
 &nbsp;
@@ -10,13 +47,14 @@
  <th>Category</th>
  <th>Subject</th>
  </tr>
- {% for stream in streams %}
+ {% for stream in Streams %}
  <tr>
  <td>{{stream.name}}</td>
  <td>{{stream.category}}</td>
+ <td>{{subjects}}</td>
 <td><a href="{% url 'subjects' %}"><button type="button" class="btn btn-success">Subjects</button></a></td>
  {% endfor %}
 </table>
 <a href="{% url 'home' %}"><button type="button" class="btn btn-success">Home Window</button></a>
 </div>
-{% endblock %}
+{% endblock %} {% endcomment %}
