@@ -1,8 +1,9 @@
 from django.shortcuts import render,redirect
 from .models import *
 from .models import Stream
-#from .forms import StreamForm
+from .forms import *
 from django.contrib.auth.decorators import login_required
+
 
 
 # Create your views here.
@@ -43,9 +44,9 @@ def subjects(request, stream_id):
 #     return render(request, 'students_view.html')
 
 
-def user_profiles(request):
-    profiles = UserProfile.objects.all()
-    return render(request, 'user_profiles.html', {'profiles': profiles})
+# def user_profiles(request):
+#     profiles = UserProfile.objects.all()
+#     return render(request, 'user_profiles.html', {'profiles': profiles})
 
 # def user_profile_view(request):
 #     user = request.user  # Get the currently logged-in user
@@ -76,3 +77,27 @@ def user_profiles(request):
 # def stream_list(request):
 #     streams = Stream.objects.all()
 #     return render(request, 'stream_list.html', {'streams': streams})
+
+
+def survey_view(request):
+    if request.method == 'POST':
+        form = SurveyForm(request.POST)
+        if form.is_valid():
+            form.save()  # Save form data to the database
+            question_1_response = form.cleaned_data['optimum_learning']
+            question_2_response = form.cleaned_data['assesments']
+            return render(request, 'test1.html', {'q1': question_1_response, 'q2': question_2_response})
+            return redirect('test1')
+    else:
+        form = SurveyForm()
+
+    return render(request, 'r1.html', {'form': form})
+
+def success_view(request):
+    q1 = request.GET.get('optimum_learning', 'No response')
+    q2 = request.GET.get('assesments', 'No response')
+    return render(request, 'test1.html', {'q1': q1, 'q2': q2})
+
+def result_view(request):
+    # This can later be populated with real logic to display results
+    return render(request, 'result.html')

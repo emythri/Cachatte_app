@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success</title>
+</head>
+<body>
+    <h1>Form Submitted Successfully!</h1>
+    <p>Thank you for your submission.</p>
+    <h1>Survey Results</h1>
+<p> {{ q1 }}</p>
+<p> {{ q2 }}</p>
+    <a href="{% url 'r1' %}">Back to the form</a>
+</body>
+</html>
+
+{% endblock %}

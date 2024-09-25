@@ -9,9 +9,9 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-         <li class="nav-item active">
+         {% comment %} <li class="nav-item active">
           <a class="nav-link" href="{% url 'students_view'%}">User Profile<!--<span class="sr-only">(current)</span>--></a> 
-        </li>
+        </li> {% endcomment %}
         <li class="nav-item active">
           <a class="nav-link" href="{% url 'dashboard'%}">Dashboard<!--<span class="sr-only">(current)</span>--></a> 
         </li>
@@ -21,6 +21,15 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'navstream'%}">Stream</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'r1' %}">Survey Form (r1)</a> <!-- Link to r1 form -->
+        </li>
+        {% comment %} <li class="nav-item">
+          <a class="nav-link" href="{% url 'test1' q1="logical learning" q2="written exams" %}">Survey Result (test1)</a> <!-- Link to test1 -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Results (result)</a> <!-- You can create a 'result' page if needed -->
+        </li> {% endcomment %}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Download
