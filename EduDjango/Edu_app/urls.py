@@ -17,6 +17,6 @@ path('stream',views.stream,name='stream'),
 #path('streams/', stream_list, name='stream_list'),
 # path('streams/create/', create_stream, name='create_stream'),
 path('r1', views.survey_view, name='r1'),
-path('test1/<str:q1>/<str:q2>/', views.success_view, name='test1'),
-path('result/', views.result_view, name='result'),
+# path('test1/<str:q1>/<str:q2>/', views.success_view, name='test1'),................
+# path('result/', views.result_view, name='result'),.................
 ]
