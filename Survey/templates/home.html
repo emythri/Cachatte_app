@@ -49,7 +49,7 @@
     </style>
 </head>
 <body>
-    <h1>Hello</h1>
+    <h1>Hello{% if user.is_authenticated %}, {{ user.username }}{% endif %}</h1>
     
     <a href="{% url 'survey_list' %}" class="button-link">View Surveys</a>
 
